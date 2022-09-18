@@ -1,22 +1,15 @@
 FROM node:10
 
-# 앱 디렉터리 생성
-WORKDIR /usr/src/app
-
-COPY ./package.json ./
+COPY /root/package.json ./
 RUN npm install
 
 # pm2 설치
 RUN npm install -g pm2 
 
-# 프로덕션을 위한 코드를 빌드하는 경우
-# RUN npm ci --only=production
-# ENV NODE_ENV production
-
 # dockerfile을 실행하는 경로에서 소스 복사
-COPY ./app.js .
-COPY ./ecosystem.config.js .
-COPY ./babel.config.json .
+COPY /root/app.js .
+COPY /root/ecosystem.config.js .
+COPY /root/babel.config.json .
 
 # 아래 포트로 매핑
 EXPOSE 8000
