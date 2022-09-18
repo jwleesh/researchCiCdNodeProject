@@ -7,6 +7,7 @@ RUN npm install
 RUN npm install -g pm2 
 
 # dockerfile을 실행하는 경로에서 소스 복사
+COPY /root/Dockerfile .
 COPY /root/app.js .
 COPY /root/ecosystem.config.js .
 COPY /root/babel.config.json .
