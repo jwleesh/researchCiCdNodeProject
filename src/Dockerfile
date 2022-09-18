@@ -1,16 +1,16 @@
 FROM node:10
 
-COPY /root/package.json ./
+COPY package.json ./
 RUN npm install
 
 # pm2 설치
 RUN npm install -g pm2 
 
 # dockerfile을 실행하는 경로에서 소스 복사
-COPY /root/Dockerfile .
-COPY /root/app.js .
-COPY /root/ecosystem.config.js .
-COPY /root/babel.config.json .
+COPY Dockerfile .
+COPY app.js .
+COPY ecosystem.config.js .
+COPY babel.config.json .
 
 # 아래 포트로 매핑
 EXPOSE 8000
