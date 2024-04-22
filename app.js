@@ -7,6 +7,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(8080, () => {
-  console.log(`Example app for CI/CD listening on port 8080`)
+app.listen(8280, () => {
+  console.log(`Example app for CI/CD listening on port 8280`)
 })
